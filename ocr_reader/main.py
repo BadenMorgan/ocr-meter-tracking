@@ -13,7 +13,6 @@ import pytesseract
 #my libs
 
 import sentry_sdk
-print(hostname)
 
 def start_sentry():
     if __name__ == "__main__":
