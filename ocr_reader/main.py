@@ -5,10 +5,7 @@ import sys
 sys.path.append('.')
 
 #3rd party libs
-try:
-    from PIL import Image
-except ImportError:
-    import Image
+from PIL import Image
 import pytesseract
 import cv2 
 from picamera.array import PiRGBArray
