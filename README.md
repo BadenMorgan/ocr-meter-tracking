@@ -7,3 +7,5 @@ sudo apt install libatlas3-base libsz2 libharfbuzz0b libtiff5 libjasper1 libilmb
 sudo apt install tesseract-ocr
 
 sudo apt install libtesseract-dev
+
+sudo apt install python3-opencv
