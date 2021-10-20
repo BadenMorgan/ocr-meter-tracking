@@ -4,9 +4,14 @@
         "-s",
         "./tests",
         "-p",
-        "test*.py"
+        "test_*.py"
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
-    "python.autoComplete.extraPaths": ["./path-to-your-code"],
+    "python.autoComplete.extraPaths": [
+        "./path-to-your-code"
+    ],
+    "python.analysis.extraPaths": [
+        "./path-to-your-code"
+    ],
 }
