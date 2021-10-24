@@ -11,8 +11,6 @@ import cv2
 
 from picamera.array import PiRGBArray
 from picamera import PiCamera
-# from picamera.array import PiRGBArray
-# from picamera import PiCamera
 
 #my libs
 
@@ -50,15 +48,15 @@ rawCapture = PiRGBArray(camera, size=(640, 480))
 if __name__ == "__main__":
     for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
         image = frame.array
-        cv2.imshow("Frame", image)
-        key = cv2.waitKey(1) & 0xFF
+        # cv2.imshow("Frame", image)
+        # key = cv2.waitKey(1) & 0xFF
         
         rawCapture.truncate(0)
 
-        if key == ord("s"):
-            text = pytesseract.image_to_string(image)
-            print(text)
-            cv2.imshow("Frame", image)
-            cv2.waitKey(0)
-            break
-    cv2.destroyAllWindows()
+        # if key == ord("s"):
+        text = pytesseract.image_to_string(image)
+        print(text)
+        # cv2.imshow("Frame", image)
+        # cv2.waitKey(0)
+        # break
+    # cv2.destroyAllWindows()
