@@ -56,7 +56,7 @@ if __name__ == "__main__":
     #     rawCapture.truncate(0)
     while 1:
         # if key == ord("s"):
-        # subprocess.call("raspistill -o image.jpg", )
+        subprocess.call("raspistill -o image.jpg", )
         text = pytesseract.image_to_string("image.jpg")
         print(text)
         # cv2.imshow("Frame", image)
