@@ -7,10 +7,12 @@ sys.path.append('.')
 #3rd party libs
 from PIL import Image
 import pytesseract
-import cv2 
+# import cv2 
 
-from picamera.array import PiRGBArray
-from picamera import PiCamera
+# from picamera.array import PiRGBArray
+# from picamera import PiCamera
+
+import subprocess
 
 #my libs
 
@@ -32,11 +34,11 @@ import sentry_sdk
 
 # start_sentry()
 
-camera = PiCamera()
-camera.resolution = (640, 480)
-camera.framerate = 30
+# camera = PiCamera()
+# camera.resolution = (640, 480)
+# camera.framerate = 0.1
 
-rawCapture = PiRGBArray(camera, size=(640, 480))
+# rawCapture = PiRGBArray(camera, size=(640, 480))
 
 
 # camera = PiCamera()
@@ -46,15 +48,16 @@ rawCapture = PiRGBArray(camera, size=(640, 480))
 
 
 if __name__ == "__main__":
-    for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
-        image = frame.array
-        # cv2.imshow("Frame", image)
-        # key = cv2.waitKey(1) & 0xFF
+    # for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
+    #     image = frame.array
+    #     # cv2.imshow("Frame", image)
+    #     # key = cv2.waitKey(1) & 0xFF
         
-        rawCapture.truncate(0)
-
+    #     rawCapture.truncate(0)
+    while 1:
         # if key == ord("s"):
-        text = pytesseract.image_to_string(image)
+        # subprocess.call("raspistill -o image.jpg", )
+        text = pytesseract.image_to_string("image.jpg")
         print(text)
         # cv2.imshow("Frame", image)
         # cv2.waitKey(0)
