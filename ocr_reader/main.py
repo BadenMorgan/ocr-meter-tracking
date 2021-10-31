@@ -64,7 +64,7 @@ if __name__ == "__main__":
         blur = cv2.GaussianBlur(img,(5,5),0)
         cv2.imwrite('blur.jpg', blur)
         for i in range(25):
-            ret,Otsu = cv2.threshold(blur,i*10,255,cv2.THRESH_BINARY)
+            ret,Otsu = cv2.threshold(blur,i*10,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
             cv2.imwrite(f'grayed_{i}.jpg', Otsu)
 
         # t3 = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,\
