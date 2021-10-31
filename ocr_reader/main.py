@@ -63,13 +63,15 @@ if __name__ == "__main__":
         img = cv2.imread("image.jpg", cv2.IMREAD_GRAYSCALE)
         blur = cv2.GaussianBlur(img,(5,5),0)
         cv2.imwrite('blur.jpg', blur)
-        ret,Otsu = cv2.threshold(blur,127,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+        for i in range(25):
+            ret,Otsu = cv2.threshold(blur,i*10,255,cv2.THRESH_BINARY)
+            cv2.imwrite(f'grayed_{i}.jpg', Otsu)
 
-        t3 = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,\
-            cv2.THRESH_BINARY,11,2)
+        # t3 = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,\
+        #     cv2.THRESH_BINARY,11,2)
         # gray = cv2.cvtColor(img, cv2.IMREAD_GRAYSCALE)
-        cv2.imwrite('grayed.jpg', Otsu)
-        cv2.imwrite('adapt.jpg', t3)
+        
+        # cv2.imwrite('adapt.jpg', t3)
         # text = pytesseract.image_to_string("grayed.jpg",config='output --dpi 151 --psm 0 -c min_characters_to_try=1')
         # print(text)
         # cv2.imshow("Frame", image)
