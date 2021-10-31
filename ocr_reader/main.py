@@ -72,8 +72,8 @@ if __name__ == "__main__":
         # gray = cv2.cvtColor(img, cv2.IMREAD_GRAYSCALE)
         
         # cv2.imwrite('adapt.jpg', t3)
-        # text = pytesseract.image_to_string("grayed.jpg",config='output --dpi 151 --psm 0 -c min_characters_to_try=1')
-        # print(text)
+        text = pytesseract.image_to_string("blur.jpg",config='output --dpi 151 --psm 0 -c min_characters_to_try=1')
+        print(text)
         # cv2.imshow("Frame", image)
         # cv2.waitKey(0)
         break
