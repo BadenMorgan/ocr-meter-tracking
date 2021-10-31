@@ -1,0 +1,17 @@
+{
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "python.autoComplete.extraPaths": [
+        "./path-to-your-code"
+    ],
+    "python.analysis.extraPaths": [
+        "./path-to-your-code"
+    ],
+}
