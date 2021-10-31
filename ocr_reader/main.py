@@ -61,9 +61,9 @@ if __name__ == "__main__":
         # if key == ord("s"):
         subprocess.call("raspistill -o /home/pi/git/ocr-meter-tracking/ocr_reader/image.jpg", shell=True)
         img = cv2.imread("image.jpg", 1)
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        gray = cv2.cvtColor(img, cv2.IMREAD_GRAYSCALE)
         cv2.imwrite('grayed.jpg', gray)
-        text = pytesseract.image_to_string("grayed.jpg",config='--dpi 151')
+        text = pytesseract.image_to_string("grayed.jpg",config='--dpi 151 --psm 0 -c min_characters_to_try=5')
         print(text)
         # cv2.imshow("Frame", image)
         # cv2.waitKey(0)
