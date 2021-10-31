@@ -7,7 +7,7 @@ sys.path.append('.')
 #3rd party libs
 from PIL import Image
 import pytesseract
-# import cv2 
+import cv2 
 
 # from picamera.array import PiRGBArray
 # from picamera import PiCamera
@@ -50,6 +50,9 @@ import sentry_sdk
 if __name__ == "__main__":
     # for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
     #     image = frame.array
+    img = cv2.imread("image.jpg", 1)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    cv2.imwrite('grayed.jpg', gray)
     #     # cv2.imshow("Frame", image)
     #     # key = cv2.waitKey(1) & 0xFF
         
