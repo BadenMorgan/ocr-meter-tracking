@@ -50,16 +50,16 @@ import sentry_sdk
 if __name__ == "__main__":
     # for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
     #     image = frame.array
-    img = cv2.imread("image.jpg", 1)
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    cv2.imwrite('grayed.jpg', gray)
+    # img = cv2.imread("image.jpg", 1)
+    # gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # cv2.imwrite('grayed.jpg', gray)
     #     # cv2.imshow("Frame", image)
     #     # key = cv2.waitKey(1) & 0xFF
         
     #     rawCapture.truncate(0)
     while 1:
         # if key == ord("s"):
-        subprocess.call("raspistill -o image.jpg", shell=True)
+        subprocess.call("raspistill -o /home/pi/git/ocr-meter-tracking/ocr_reader/image.jpg", shell=True)
         text = pytesseract.image_to_string("image.jpg")
         print(text)
         # cv2.imshow("Frame", image)
